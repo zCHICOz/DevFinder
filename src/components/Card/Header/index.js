@@ -10,7 +10,7 @@ function Header({ data }) {
   return (
     <header className="card-header-container">
       <div className="main-infos">
-        <a href={data.url} target="_blank" rel="noreferrer">
+        <a href={data.url || ''} target="_blank" rel="noreferrer">
           <img src={data.avatar} alt="Avatar GitHub" />
         </a>
 

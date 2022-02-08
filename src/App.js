@@ -12,14 +12,14 @@ function App() {
   const [username, setUsername] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showCard, setShowCard] = useState(false);
+  const [showMessageError, setShowMessageError] = useState(false);
 
   function loadUserInfo() {
-    console.log('aloo')
+    setUsername('');
     setIsLoading(false);
 
     api.get(`/users/${username}`)
     .then(res => {
-      console.log(res)
       const userData = {
         avatar: res.data.avatar_url,
         bio: res.data.bio,
@@ -35,13 +35,16 @@ function App() {
         createdAt: res.data.created_at,
         url: res.data.url
       };
-
+      
+      setShowMessageError(false);
       setData(userData);
       setIsLoading(false);
       setShowCard(true);
     })
     .catch(err => {
-      console.error('ERROR: ', err);
+      setShowCard(false);
+      setData([]);
+      setShowMessageError(true);
       setIsLoading(false);
     })
   };
@@ -64,6 +67,10 @@ function App() {
         <Card
           data={data}
         />
+      }
+
+      {
+        showMessageError && <h2 className="message-error">Erro ao buscar dados do usuário!</h2>
       }
     </div>
   );

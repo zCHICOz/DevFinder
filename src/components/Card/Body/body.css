@@ -1,0 +1,23 @@
+.card-body-container {
+  width: 75%;
+  margin: 24px 0 0 auto;
+  border-radius: 16px;
+  background-color: var(--blueDark);
+  padding: 24px 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info h2 {
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 5px;
+  opacity: 0.7;
+}
+
+.user-info span {
+  font-size: 1.6em;
+  font-weight: 600;
+}

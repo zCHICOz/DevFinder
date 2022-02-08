@@ -1,0 +1,38 @@
+:root {
+  --blueLight: #1F2A48;
+  --blue: #0178FF;
+  --blueDark: #141C2F;
+  --white: #FFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Mono', monospace;
+}
+
+body {
+  background-color: var(--blueDark);
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+}
+
+button, input {
+  outline: 0;
+  border: 0;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  height: 50px;
+  transition: 0.15s ease-in;
+  padding: 0px 24px;
+  border-radius: 8px;
+}
+
+button {
+  cursor: pointer;
+}

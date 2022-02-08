@@ -1,0 +1,31 @@
+.search-box-container {
+  background-color: var(--blueLight);
+  padding: 12px 24px;
+  border-radius: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-box-container input {
+  flex: 1;
+  font-size: 18px;
+  margin: 0px 8px;
+  background-color: transparent;
+}
+
+.search-box-container input::placeholder {
+  color: var(--white);
+  opacity: 0.7;
+}
+
+.search-box-container button {
+  background-color: var(--blue);
+}
+
+.search-box-container button:hover {
+  background-color: var(--white);
+  color: var(--blue);
+  box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
+}

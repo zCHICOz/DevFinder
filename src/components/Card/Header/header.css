@@ -1,0 +1,50 @@
+.card-header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-header-container img {
+  width: 180px;
+  border-radius: 100px;
+  margin-right: 32px;
+  cursor: pointer;
+
+  transition: 0.15s ease-in;
+}
+
+.card-header-container img:hover {
+  box-shadow: 0px 0px 5px 2px var(--blue);
+}
+
+.card-header-container .main-infos {
+  display: flex;
+}
+
+.main-infos .texts {
+  margin: 24px 0px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-infos .username h2 {
+  font-size: 1.3em;
+}
+
+.main-infos .username span {
+  display: block;
+  margin-top: 16px;
+  color: var(--blue);
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.texts p {
+  opacity: 0.7;
+}
+
+.card-header-container .joined-info {
+  margin-top: 24px;
+  opacity: 0.7;
+}

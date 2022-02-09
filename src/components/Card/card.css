@@ -4,4 +4,14 @@
   border-radius: 24px;
   padding: 32px;
   margin-top: 40px;
+  animation: slideY 1s;
+}
+
+@keyframes slideY {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }

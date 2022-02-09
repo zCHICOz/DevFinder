@@ -15,8 +15,9 @@ function App() {
   const [showMessageError, setShowMessageError] = useState(false);
 
   function loadUserInfo() {
+    setShowCard(false);
     setUsername('');
-    setIsLoading(false);
+    setIsLoading(true);
 
     api.get(`/users/${username}`)
     .then(res => {
@@ -59,19 +60,21 @@ function App() {
       />
 
       {
-        isLoading && 'Carregando...'
+        isLoading && <h2 className="msg-status">Carregando...</h2>
       }
 
       {
-        showCard &&
-        <Card
-          data={data}
-        />
+        showMessageError && !isLoading && <h2 className="msg-status">Erro ao buscar dados do usuário!</h2>
       }
 
-      {
-        showMessageError && <h2 className="message-error">Erro ao buscar dados do usuário!</h2>
-      }
+      <main className="main-content">
+        {
+          showCard &&
+          <Card
+            data={data}
+          />
+        }
+      </main>
     </div>
   );
 }

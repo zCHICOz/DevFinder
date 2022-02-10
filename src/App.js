@@ -10,14 +10,22 @@ import './index.css';
 function App() {
   const [data, setData] = useState([]);
   const [username, setUsername] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [msgStatus, setMsgStatus] = useState('Pesquise por um usuário!');
   const [showCard, setShowCard] = useState(false);
-  const [showMessageError, setShowMessageError] = useState(false);
+  const [showMessageStatus, setShowMessageStatus] = useState(true);
+
+  function reloadApp() {
+    setData([]);
+    setShowCard(false);
+    setMsgStatus('Pesquise por um usuário!');
+    setShowMessageStatus(true);
+  };
 
   function loadUserInfo() {
+    setShowMessageStatus(true);
     setShowCard(false);
     setUsername('');
-    setIsLoading(true);
+    setMsgStatus('Carregando...');
 
     api.get(`/users/${username}`)
     .then(res => {
@@ -34,25 +42,24 @@ function App() {
         twitter: res.data.twitter_username,
         link: res.data.blog,
         createdAt: res.data.created_at,
-        url: res.data.url
+        url: res.data.html_url
       };
       
-      setShowMessageError(false);
       setData(userData);
-      setIsLoading(false);
+      setShowMessageStatus(false);
       setShowCard(true);
     })
     .catch(err => {
       setShowCard(false);
       setData([]);
-      setShowMessageError(true);
-      setIsLoading(false);
+      setShowMessageStatus(true);
+      setMsgStatus('Erro ao buscar dados do usuário!');
     })
   };
 
   return (
     <div className="container">
-      <Header />
+      <Header reloadApp={reloadApp} />
       <SearchBox
         username={username}
         setUsername={setUsername}
@@ -60,11 +67,7 @@ function App() {
       />
 
       {
-        isLoading && <h2 className="msg-status">Carregando...</h2>
-      }
-
-      {
-        showMessageError && !isLoading && <h2 className="msg-status">Erro ao buscar dados do usuário!</h2>
+        showMessageStatus && <h2 className="msg-status">{ msgStatus }</h2>
       }
 
       <main className="main-content">

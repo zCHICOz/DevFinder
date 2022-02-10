@@ -1,7 +1,12 @@
-function Home() {
+function Home({ reloadApp }) {
   return (
     <header style={styles.container}>
-      <h1 style={styles.title}>devfinder</h1>
+      <h1
+        style={styles.title}
+        onClick={() => reloadApp()}
+      >
+        devfinder
+      </h1>
     </header>
   );
 }
@@ -12,6 +17,7 @@ const styles = {
   },
   title: {
     fontSize: '1.5em',
+    cursor: 'pointer',
   }
 }
 

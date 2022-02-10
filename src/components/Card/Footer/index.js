@@ -1,29 +1,31 @@
 import { FaTwitter, FaLink, FaMapMarkerAlt, FaBuilding } from 'react-icons/fa';
+import LinkItem from './LinkItem';
 import './footer.css';
 
 function Footer({ data }) {
   return (
     <footer className="card-footer-container">
       <section>
-        <a href="#" className="item" target="_blank">
+        <LinkItem info={data.location} url="#">
           <FaMapMarkerAlt size={24} color="#FFF" className="icon-footer" />
-          <span>{ data.location || 'No data.' }</span>
-        </a>
-        <a href={data.link} className="item" target="_blank" rel="noreferrer">
+        </LinkItem>
+
+        <LinkItem info={data.link} url={data.link}>
           <FaLink size={24} color="#FFF" className="icon-footer" />
-          <span>{ data.link || 'No data.' }</span>
-        </a>
+        </LinkItem>
       </section>
 
       <section>
-        <a href={`https://twitter.com/${data.twitter}`} className="item" target="_blank" rel="noreferrer">
+        <LinkItem
+          info={data.twitter}
+          url={data.twitter ? `https://twitter.com/${data.twitter}` : '#'}
+        >
           <FaTwitter size={24} color="#FFF" className="icon-footer" />
-          <span>{ data.twitter ? `@ ${data.twitter}` : 'No data.' }</span>
-        </a>
-        <a href="#" className="item" target="_blank">
+        </LinkItem>
+
+        <LinkItem info={data.company} url="#">
           <FaBuilding size={24} color="#FFF" className="icon-footer" />
-          <span>{ data.company || 'No data.' }</span>
-        </a>
+        </LinkItem>
       </section>
     </footer>
   );

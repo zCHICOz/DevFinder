@@ -9,30 +9,36 @@ function Header({ data }) {
 
   return (
     <header className="card-header-container">
-      <div className="main-infos">
-        <a href={data.url || ''} target="_blank" rel="noreferrer">
-          <img src={data.avatar} alt="Avatar GitHub" />
-        </a>
+      <a href={data.url} target="_blank" rel="noreferrer">
+        <img src={data.avatar} alt="Avatar GitHub" />
+      </a>
 
-        <div className="texts">
-          <div className="username">
-            <h2>{ data.name }</h2>
-            <span>@{ data.username }</span>
+      <section className="texts">
+        <div className="user-container">
+          <div>
+            <a href={data.url} className="name" target="_blank" rel="noreferrer">
+              { data.name }
+            </a>
+
+            <a href={data.url} className="userName" target="_blank" rel="noreferrer">
+              @{ data.username }
+            </a>
           </div>
 
-          <p>
+          <span className="joined-info">
             {
-              data.bio ? data.bio : 'This profile has no bio.'
+              `Joined ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
             }
-          </p>
-        </div>
-      </div>
+          </span>
 
-      <span className="joined-info">
-        {
-          `Joined ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
-        }
-      </span>
+        </div>
+
+        <p>
+          {
+            data.bio ? data.bio : 'This profile has no bio.'
+          }
+        </p>
+      </section>
     </header>
   );
 }

@@ -1,6 +1,5 @@
 .card-header-container {
   display: flex;
-  justify-content: space-between;
 }
 
 .card-header-container img {
@@ -16,11 +15,8 @@
   box-shadow: 0px 0px 5px 2px var(--blue);
 }
 
-.card-header-container .main-infos {
-  display: flex;
-}
-
-.main-infos .texts {
+.texts {
+  width: 100%;
   margin: 24px 0px;
   
   display: flex;
@@ -28,23 +24,40 @@
   justify-content: space-between;
 }
 
-.main-infos .username h2 {
-  font-size: 1.3em;
+.user-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-.main-infos .username span {
+.user-container .name {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--white);
+  transition: 0.1s ease-in;
+}
+
+.user-container .name:hover {
+  opacity: 0.7;
+}
+
+.user-container .userName {
   display: block;
-  margin-top: 16px;
   color: var(--blue);
+  margin-top: 8px;
   font-size: 0.9em;
   font-weight: 600;
+  transition: 0.1s ease-in;
+}
+
+.user-container .userName:hover {
+  opacity: 0.7;
 }
 
 .texts p {
+  line-height: 1.5;
   opacity: 0.7;
 }
 
 .card-header-container .joined-info {
-  margin-top: 24px;
   opacity: 0.7;
 }

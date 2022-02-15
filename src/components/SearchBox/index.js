@@ -4,7 +4,7 @@ import './searchBox.css';
 function SearchBox({ username, setUsername, loadUserInfo }) {
   return (
     <section className="search-box-container">
-      <FaSearch size={28} color="#0178FF" />
+      <FaSearch size={28} color="#0178FF" className="icon-search" />
       <input
         type="text"
         placeholder="Search GitHub username..."

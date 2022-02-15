@@ -5,6 +5,9 @@
   padding: 32px;
   margin-top: 40px;
   animation: slideY 1s;
+
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes slideY {

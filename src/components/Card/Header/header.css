@@ -61,3 +61,46 @@
 .card-header-container .joined-info {
   opacity: 0.7;
 }
+
+
+/* RESPONSIVE ======== */
+@media (max-width: 1000px) {
+  .card-header-container img {
+    width: 150px;
+  }
+
+  .texts .user-container {
+    flex-direction: column;
+  }
+  
+  .texts .user-container .joined-info {
+    margin-top: 16px;
+  }
+
+  .texts p {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 750px) {
+  .texts {
+    margin: 0;
+  }
+
+  .card-header-container img {
+    width: 100px;
+  }
+
+  .user-container .name {
+    font-size: 1.2em;
+  }
+
+  .user-container .userName, .joined-info {
+    font-size: 0.75em;
+  }
+
+  .texts p {
+    margin-top: 24px;
+    font-size: 0.8em;
+  }
+}

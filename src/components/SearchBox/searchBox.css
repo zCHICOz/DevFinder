@@ -29,3 +29,21 @@
   color: var(--blue);
   box-shadow: inset 3px 3px 3px 0px rgba(0, 0, 0, 0.3);
 }
+
+/* RESPONSIVE ======== */
+@media (max-width: 750px) {
+  .search-box-container input, .search-box-container button {
+    margin: 0;
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .search-box-container button {
+    padding: 0px 12px;
+  }
+
+  .icon-search {
+    width: 20px;
+    height: 20px;
+  }
+}

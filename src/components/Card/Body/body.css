@@ -21,3 +21,21 @@
   font-size: 1.6em;
   font-weight: 600;
 }
+
+/* RESPONSIVE ======== */
+@media (max-width: 1000px) {
+  .card-body-container {
+    width: 100%;
+    margin: 24px 0px;
+  }
+}
+
+@media (max-width: 750px) {
+  .user-info h2 {
+    font-size: 0.8em;
+  }
+
+  .user-info span {
+    font-size: 1.3em;
+  }
+}

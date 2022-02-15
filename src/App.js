@@ -7,7 +7,7 @@ import Card from './components/Card';
 
 import './index.css';
 
-function App() {
+export default function App() {
   const [data, setData] = useState([]);
   const [username, setUsername] = useState('');
   const [msgStatus, setMsgStatus] = useState('Pesquise por um usuário!');
@@ -59,12 +59,14 @@ function App() {
 
   return (
     <div className="container">
-      <Header reloadApp={reloadApp} />
-      <SearchBox
-        username={username}
-        setUsername={setUsername}
-        loadUserInfo={loadUserInfo}
-      />
+      <div className="header-container">
+        <Header reloadApp={reloadApp} />
+        <SearchBox
+          username={username}
+          setUsername={setUsername}
+          loadUserInfo={loadUserInfo}
+        />
+      </div>
 
       {
         showMessageStatus && <h2 className="msg-status">{ msgStatus }</h2>
@@ -81,5 +83,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

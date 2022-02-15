@@ -10,6 +10,19 @@
   flex-direction: column;
 }
 
+.header-container {
+  animation: slideHeader 1.3s;
+}
+
+@keyframes slideHeader {
+  from {
+    transform: translateY(-80px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
 .container .main-content {
   flex: 1;
 }

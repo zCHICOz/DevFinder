@@ -3,7 +3,7 @@ function Home({ reloadApp }) {
     <header style={styles.container}>
       <h1
         style={styles.title}
-        onClick={() => reloadApp()}
+        onClick={() => reloadApp('Pesquise por um usuário!')}
       >
         devfinder
       </h1>

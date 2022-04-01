@@ -14,10 +14,10 @@ export default function App() {
   const [showCard, setShowCard] = useState(false);
   const [showMessageStatus, setShowMessageStatus] = useState(true);
 
-  function reloadApp() {
+  function reloadApp(message) {
     setData([]);
     setShowCard(false);
-    setMsgStatus('Pesquise por um usuário!');
+    setMsgStatus(message);
     setShowMessageStatus(true);
   };
 
@@ -50,10 +50,7 @@ export default function App() {
       setShowCard(true);
     })
     .catch(err => {
-      setShowCard(false);
-      setData([]);
-      setShowMessageStatus(true);
-      setMsgStatus('Erro ao buscar dados do usuário!');
+      reloadApp('Erro ao buscar dados do usuário!');
     })
   };
 

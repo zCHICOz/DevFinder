@@ -1,6 +1,11 @@
 export default function LinkItem({ children, info, url }) {
   return(
-    <a href={url} className="item" target="_blank" rel="noreferrer">
+    <a
+      href={url ? url : '#'}
+      className="item"
+      target={url ? '_blank' : '_parent'}
+      rel="noreferrer"
+    >
       { children }
       <span>{ info || 'No data.' }</span>
     </a>

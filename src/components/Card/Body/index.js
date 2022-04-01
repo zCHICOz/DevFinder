@@ -1,19 +1,19 @@
 import './body.css';
 
-function Body({ data }) {
+function Body({ repos, followers, following }) {
   return (
     <main className="card-body-container">
       <div className="user-info">
         <h2>Repos</h2>
-        <span>{ data.repos || '' }</span>
+        <span>{ repos || '' }</span>
       </div>
       <div className="user-info">
         <h2>Followers</h2>
-        <span>{ data.followers || '' }</span>
+        <span>{ followers || '' }</span>
       </div>
       <div className="user-info">
         <h2>Following</h2>
-        <span>{ data.following || '' }</span>
+        <span>{ following || '' }</span>
       </div>
     </main>
   );

@@ -7,9 +7,25 @@ import './card.css';
 function Card({ data }) {
   return (
     <section className="card-container">
-      <Header data={data} />
-      <Body data={data} />
-      <Footer data={data} />
+      <Header
+        avatar={data.avatar}
+        bio={data.bio}
+        createdAt={data.createdAt}
+        name={data.name}
+        url={data.url}
+        username={data.username}
+      />
+      <Body
+        repos={data.repos} 
+        followers={data.followers}
+        following={data.following}
+      />
+      <Footer
+        company={data.company}
+        link={data.link}
+        location={data.location}
+        twitter={data.twitter}
+      />
     </section>
   );
 }
